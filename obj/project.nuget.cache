@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "9YhCzsNMg0Y=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\BradleyDeans\\Documents\\code\\QrCodeGeneratorDemo\\QrCodeGeneratorDemo.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\BradleyDeans\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\BradleyDeans\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\BradleyDeans\\.nuget\\packages\\qrcoder\\1.4.1\\qrcoder.1.4.1.nupkg.sha512",
+    "C:\\Users\\BradleyDeans\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,20 +1,15 @@
-﻿namespace QrCodeGeneratorDemo 
-{
-    public class Program 
-    {
-        public static void Main(string[] args) 
-        {
-            string filePath = $@"C:\\Users\\{Environment.UserName}\\Pictures\\QrCodeTest";
-            QrCodeGenerator qrCodeGenerator = new QrCodeGenerator();
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using QrCodeGeneratorDemo.Services;
+using QrCodeGeneratorDemo.Services.Interfaces;
+using QrCodeGeneratorDemo;
 
-            Console.WriteLine("Enter QR code name: ");
-            string qrCodeName = Console.ReadLine() ?? "qrcode.png";
+HostApplicationBuilder builder = Host.CreateApplicationBuilder(args);
 
-            Console.WriteLine("Enter QR code text: ");
-            string qrCodeText = Console.ReadLine() ?? "Hello, World!";
+builder.Services.AddSingleton<IEmailService, EmailService>();
+builder.Services.AddSingleton<IQrCodeService, QrCodeService>();
+builder.Services.AddSingleton<App>();
 
-            qrCodeGenerator.GenerateQrCode(qrCodeText, filePath, qrCodeName);
-            Console.WriteLine($"QR code saved to {filePath}\\{qrCodeName}");
-        }
-    }
-}
+using IHost host = builder.Build();
+App app = host.Services.GetRequiredService<App>();
+app.Run();
